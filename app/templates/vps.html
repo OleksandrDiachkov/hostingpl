@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="row">
+<div class="pricing-wrapper">
+
+{% for tariff in tariffs%}
+<div class="span3">
+	<div class="pricing">
+        <table>
+        	<thead>
+                <tr>
+                    <th> 
+                        <div class="label-wrapper">
+                            <div class="price-label"><span>od</span>{{tariff.price}}zł<span>netto / mc</span> </div> 
+                            </div>
+                        {{tariff.name}}</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td><a href="zamowienie/hdd-vps-1x/" class="mybtn bigbtn">Testuj 7 dni »</a></td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td class="same-height"><img src="/static/images/hdd-vps-1x.png" alt="{{tariff.name}}">
+                                    <ul class="hosting-list">
+                                        <li><i class="icon-ram"></i>RAM: <strong>{{tariff.ram}} MB</strong></li>
+                                        <li><i class="icon-cpu-processor"></i>CPU: <strong>{{tariff.cpu.decode('utf-8')}}</strong></li>
+                                        <li><i class="icon-hdd"></i>Dysk: <strong>{{tariff.hdd}} GB</strong></li>
+                                        <li><i class="icon-bandwidth"></i>Transfer: <strong>{{tariff.traffic}}TB</strong></li>
+                                        <li>Miesięcznie: <strong>37.00 zł netto</strong></li>
+                                        <li>
+                                            Kwartalnie: <strong>105.00 zł netto</strong>
+                                        </li>
+                                        <li>
+                                            Półrocznie: <strong>192.00 zł netto</strong>
+                                        </li>
+                                        <li>
+                                            Rocznie: <strong>324.00 zł netto</strong>
+                                        </li>
+                                    </ul>
+                            </td></tr>
+                        </tbody>
+                    </table>
+   	</div>
+</div>
+{% endfor %}
+
+</div>
+</div>
+<div class="spacer-40px"></div>
+
+	<div class="row">
+	<div class="fr-icon clearfix">
+		<div class="span2">
+            <h3 class="cursive" style="margin-top: -10px;"><span class="color-orange">Nasza oferta </span><br>zawiera w cenie »</h3>
+        </div>
+		<div class="span2"><i class="icon-check"></i>Ploop Snapshot Backup </div>
+		<div class="span2"><i class="icon-check"></i>Szybką<br>instalację</div>
+		<div class="span2"> <i class="icon-check"></i> Nowoczesną <br>Serwerownię </div>
+		<div class="span2"> <i class="icon-check"></i> Nieprzeciążone <br>Maszyny </div>
+		<div class="span2"> <i class="icon-check"></i> Świetny <br>Support </div>
+		</div>
+		<div class="span12 text-center">
+			<p class="text-big color-orange">Wciąż nie wiesz który plan jest dla Ciebie? <a href="kontakt/">Skontaktuj się z Nami!</a></p>
+		</div>
+	</div>
+	{% endblock %}
